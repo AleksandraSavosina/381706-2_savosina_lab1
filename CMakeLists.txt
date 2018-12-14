@@ -3,7 +3,6 @@ cmake_minimum_required(VERSION 2.8) #Проверка версии CMake.
 set(PROJECT_NAME 381706-2_savosina_labs)
 project(${PROJECT_NAME})
 
-set(gtest gtest)
 set(include include)
 set(samples samples)
 set(test test)

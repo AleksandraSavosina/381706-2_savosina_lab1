@@ -3,10 +3,10 @@ cmake_minimum_required(VERSION 2.8) #Проверка версии CMake.
 set(PROJECT_NAME 381706-2_savosina_labs)
 project(${PROJECT_NAME})
 
-set(gtest)
-set(include)
-set(samples)
-set(test)
+set(gtest gtest)
+set(include include)
+set(samples samples)
+set(test test)
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE) 
 # Создается переменная CMAKE_CONFIGURATION_TYPES со значением "Debug;Release" 
@@ -21,10 +21,10 @@ file(GLOB srcs "*.cpp") #Добавляем в переменную srcs все 
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include 
 ${CMAKE_CURRENT_SOURCE_DIR}/gtest)
-add_subdirectory(gtest)
-add_subdirectory(include)
-add_subdirectory(samples)
-add_subdirectory(test)
+add_subdirectory(gtest gtest)
+add_subdirectory(include include)
+add_subdirectory(samples samples)
+add_subdirectory(test test)
 
 # REPORT
 message( STATUS "")

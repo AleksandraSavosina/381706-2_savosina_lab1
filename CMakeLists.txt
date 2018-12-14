@@ -5,7 +5,7 @@ project(${PROJECT_NAME})
 
 set(include include)
 set(samples samples)
-set(test test)
+set(mtest test)
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE) 
 # Создается переменная CMAKE_CONFIGURATION_TYPES со значением "Debug;Release" 
@@ -24,7 +24,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/test)
 
 add_subdirectory(include include)
 add_subdirectory(samples samples)
-add_subdirectory(test test)
+add_subdirectory(mtest test)
 
 # REPORT
 message( STATUS "")

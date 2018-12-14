@@ -24,7 +24,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/settest)
 
 add_subdirectory(setlib setlib)
 add_subdirectory(Set Set)
-add_subdirectory(settest settest)
+
 
 # REPORT
 message( STATUS "")

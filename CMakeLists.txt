@@ -1,30 +1,30 @@
-cmake_minimum_required(VERSION 2.8) #Проверка версии CMake.
+cmake_minimum_required(VERSION 2.8) #ГЏГ°Г®ГўГҐГ°ГЄГ  ГўГҐГ°Г±ГЁГЁ CMake.
 
 set(PROJECT_NAME 381706-2_savosina_labs)
 project(${PROJECT_NAME})
 
-set(include include)
-set(Set)
-set(settest)
+set(setlib setlib)
+set(Set Set)
+set(settest settest)
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE) 
-# Создается переменная CMAKE_CONFIGURATION_TYPES со значением "Debug;Release" 
-# и меткой/разделом Configs, переменная сохраниется в специальном файле доступном 
-# из всех файлов,
-if(NOT CMAKE_BUILD_TYPE) # проверка имеющихся у компилятора вариантов сборки
-  set(CMAKE_BUILD_TYPE Release) #Если нет то устанавливаем Release
+# Г‘Г®Г§Г¤Г ГҐГІГ±Гї ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г Гї CMAKE_CONFIGURATION_TYPES Г±Г® Г§Г­Г Г·ГҐГ­ГЁГҐГ¬ "Debug;Release" 
+# ГЁ Г¬ГҐГІГЄГ®Г©/Г°Г Г§Г¤ГҐГ«Г®Г¬ Configs, ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г Гї Г±Г®ГµГ°Г Г­ГЁГҐГІГ±Гї Гў Г±ГЇГҐГ¶ГЁГ Г«ГјГ­Г®Г¬ ГґГ Г©Г«ГҐ Г¤Г®Г±ГІГіГЇГ­Г®Г¬ 
+# ГЁГ§ ГўГ±ГҐГµ ГґГ Г©Г«Г®Гў,
+if(NOT CMAKE_BUILD_TYPE) # ГЇГ°Г®ГўГҐГ°ГЄГ  ГЁГ¬ГҐГѕГ№ГЁГµГ±Гї Гі ГЄГ®Г¬ГЇГЁГ«ГїГІГ®Г°Г  ГўГ Г°ГЁГ Г­ГІГ®Гў Г±ГЎГ®Г°ГЄГЁ
+  set(CMAKE_BUILD_TYPE Release) #Г…Г±Г«ГЁ Г­ГҐГІ ГІГ® ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Release
 endif()
 
-file(GLOB hdrs "*.h*") #Добавляем в переменную hdrs все файлы с расширением .h
-file(GLOB srcs "*.cpp") #Добавляем в переменную srcs все файлы с расширением .h
+file(GLOB hdrs "*.h*") #Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Гў ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ hdrs ГўГ±ГҐ ГґГ Г©Г«Г» Г± Г°Г Г±ГёГЁГ°ГҐГ­ГЁГҐГ¬ .h
+file(GLOB srcs "*.cpp") #Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Гў ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ srcs ГўГ±ГҐ ГґГ Г©Г«Г» Г± Г°Г Г±ГёГЁГ°ГҐГ­ГЁГҐГ¬ .h
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/gtest)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Set)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/settest)
 
-add_subdirectory(setlib)
-add_subdirectory(Set)
-add_subdirectory(settest)
+add_subdirectory(setlib setlib)
+add_subdirectory(Set Set)
+add_subdirectory(settest settest)
 
 # REPORT
 message( STATUS "")

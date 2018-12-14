@@ -8,6 +8,6 @@ before_script:
 script:
   - cmake ../381706-2_savosina_lab1
   - make -j
-  - ./vector/vector
+  - ./381706-2_savosina_lab1
 notifications:
   email: false

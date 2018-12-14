@@ -7,7 +7,7 @@ before_script:
   - cd ../build
 script:
   - cmake ../381706-2_savosina_labs
-  - ./Set/Set
-  - ./settest/settest
+  - ./Set
+  - ./settest
 notifications:
   email: false

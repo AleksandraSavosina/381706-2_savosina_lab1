@@ -21,7 +21,7 @@ file(GLOB srcs "*.cpp") #Добавляем в переменную srcs все 
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include 
 ${CMAKE_CURRENT_SOURCE_DIR}/gtest)
-add_subdirectory(gtest gtest)
+
 add_subdirectory(include include)
 add_subdirectory(samples samples)
 add_subdirectory(test test)

@@ -9,5 +9,6 @@ script:
   - cmake ../381706-2_savosina_labs
   - make -j
   - ./gtest/gtest
+  - ./test/test
 notifications:
   email: false

@@ -1,6 +1,6 @@
 # Методы программирования 2: Верхнетреугольные матрицы на шаблонах
 
-[![Build Status](https://travis-ci.org/AleksandraSavosina/381706-2_savosina_labs.svg)][travis]?branch=lab2_matrix)](https://travis-ci.org/AleksandraSavosina/381706-2_savosina_labs)
+[![Build Status](https://travis-ci.org/AleksandraSavosina/381706-2_savosina_labs.svg?branch=lab2_matrix)](https://travis-ci.org/AleksandraSavosina/381706-2_savosina_labs)
 
 <!-- TODO
   -

@@ -24,7 +24,6 @@ ${CMAKE_CURRENT_SOURCE_DIR}/gtest)
 add_subdirectory(gtest)
 add_subdirectory(include)
 add_subdirectory(samples)
-add_subdirectory(sln)
 add_subdirectory(test)
 
 # REPORT

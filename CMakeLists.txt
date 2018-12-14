@@ -5,7 +5,7 @@ project(${PROJECT_NAME})
 
 set(include include)
 set(samples samples)
-set(mtest test)
+set(mtest mtest)
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE) 
 # Создается переменная CMAKE_CONFIGURATION_TYPES со значением "Debug;Release" 
@@ -20,11 +20,11 @@ file(GLOB srcs "*.cpp") #Добавляем в переменную srcs все 
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/gtest)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/test)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/mtest)
 
 add_subdirectory(include include)
 add_subdirectory(samples samples)
-add_subdirectory(mtest test)
+add_subdirectory(mtest mtest)
 
 # REPORT
 message( STATUS "")

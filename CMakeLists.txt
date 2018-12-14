@@ -1,26 +1,42 @@
-cmake_minimum_required(VERSION 2.8) #Проверка версии CMake.
+cmake_minimum_required(VERSION 2.8) #Ïðîâåðêà âåðñèè CMake.
 
-set(PROJECT_NAME 381706-2_savosina_lab1) #Создаем обычную локальную переменную с именем проекта
-project(${PROJECT_NAME}) # Название проекта 
+set(PROJECT_NAME 381706-2_savosina_labs)
+project(${PROJECT_NAME})
 
-set(vector vector) #Переменная с именем библиотеки
-set(vectorlib vectorlib) #Переменная с именем библиотеки
+set(setlib setlib)
+set(Set Set)
+set(settest settest)
 
-set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE) #Создается переменная CMAKE_CONFIGURATION_TYPES со значением "Debug;Release" и меткой/разделом Configs, переменная сохраниется в специальном файле доступном из всех файлов,
-if(NOT CMAKE_BUILD_TYPE) # проверка имеющихся у компилятора вариантов сборки
-  set(CMAKE_BUILD_TYPE Release) #Если нет то устанавливаем Release
+set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE) 
+# Ñîçäàåòñÿ ïåðåìåííàÿ CMAKE_CONFIGURATION_TYPES ñî çíà÷åíèåì "Debug;Release" 
+# è ìåòêîé/ðàçäåëîì Configs, ïåðåìåííàÿ ñîõðàíèåòñÿ â ñïåöèàëüíîì ôàéëå äîñòóïíîì 
+# èç âñåõ ôàéëîâ,
+if(NOT CMAKE_BUILD_TYPE) # ïðîâåðêà èìåþùèõñÿ ó êîìïèëÿòîðà âàðèàíòîâ ñáîðêè
+  set(CMAKE_BUILD_TYPE Release) #Åñëè íåò òî óñòàíàâëèâàåì Release
 endif()
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vectorlib)
+file(GLOB hdrs "*.h*") #Äîáàâëÿåì â ïåðåìåííóþ hdrs âñå ôàéëû ñ ðàñøèðåíèåì .h
+file(GLOB srcs "*.cpp") #Äîáàâëÿåì â ïåðåìåííóþ srcs âñå ôàéëû ñ ðàñøèðåíèåì .h
 
-add_subdirectory(vector) #Собираем проект в поддиректории vector
-add_subdirectory(vectorlib)
-#file(GLOB hdrs "*.h*") #Добавляем в переменную hdrs все файлы с расширением .h
-#file(GLOB srcs "*.cpp") #Добавляем в переменную srcs все файлы с расширением .cpp
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/gtest)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Set)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/settest)
+
+add_subdirectory(setlib setlib)
+add_subdirectory(Set Set)
 
 
-#add_executable(${PROJECT_NAME} ${srcs} ${hdrs}) #Создаем проект с именем из переменной ${PROJECT_NAME}, в него добавляются файлы из переменных ${srcs} и ${hdrs}
-
-
-#add_subdirectory(lib1) #Собираем проект в поддиректории lib1
-#target_link_libraries(${PROJECT_NAME} ${MyLib1}) #Подключаем к проекту с именем ${PROJECT_NAME} библиотеку с именем ${MyLib1}
+# REPORT
+message( STATUS "")
+message( STATUS "General configuration for ${PROJECT_NAME}")
+message( STATUS "======================================")
+message( STATUS "")
+message( STATUS "   Configuration: ${CMAKE_BUILD_TYPE}")
+message( STATUS "")
+# REPORT
+message( STATUS "")
+message( STATUS "General configuration for ${PROJECT_NAME}")
+message( STATUS "======================================")
+message( STATUS "")
+message( STATUS "   Configuration: ${CMAKE_BUILD_TYPE}")
+message( STATUS "")

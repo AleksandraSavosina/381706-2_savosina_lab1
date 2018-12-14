@@ -1,6 +1,6 @@
 # Методы программирования 2: Верхнетреугольные матрицы на шаблонах
 
-[![Build Status](https://travis-ci.org/UNN-VMK-Software/mp2-lab1-set.svg)][travis]
+[![Build Status](https://travis-ci.org/AleksandraSavosina/381706-2_savosina_labs.svg)][travis]
 
 <!-- TODO
   -
@@ -80,5 +80,5 @@
 
 [git]:         https://git-scm.com/book/ru/v2
 [gtest]:       https://github.com/google/googletest
-[travis]:      https://travis-ci.org/UNN-VMK-Software/mp2-lab1-set
+[travis]:      https://travis-ci.org/AleksandraSavosina/381706-2_savosina_labs
 

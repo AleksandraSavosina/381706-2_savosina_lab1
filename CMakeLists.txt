@@ -6,7 +6,6 @@ project(${PROJECT_NAME})
 set(gtest)
 set(include)
 set(samples)
-set(sln)
 set(test)
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE) 

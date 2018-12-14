@@ -1,7 +1,0 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (gtest.vcxproj, test_utmatrix.vcxproj).  Это может привести к ошибкам очистки и перестроения.
-  sample_matrix.cpp
-c:\users\savosin\desktop\лабы\laba\mp2-lab2-matrix\samples\sample_matrix.cpp(35): warning C4215: нестандартное расширение: long float
-c:\users\savosin\desktop\лабы\laba\mp2-lab2-matrix\samples\sample_matrix.cpp(37): warning C4215: нестандартное расширение: long float
-c:\users\savosin\desktop\лабы\laba\mp2-lab2-matrix\samples\sample_matrix.cpp(40): warning C4215: нестандартное расширение: long float
-  sample_utmatrix.vcxproj -> C:\Users\Savosin\Desktop\Лабы\Laba\mp2-lab2-matrix\sln\vc17\Debug\sample_utmatrix.exe
-  sample_utmatrix.vcxproj -> C:\Users\Savosin\Desktop\Лабы\Laba\mp2-lab2-matrix\sln\vc17\Debug\sample_utmatrix.pdb (Full PDB)

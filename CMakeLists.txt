@@ -1,29 +1,31 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.8) #Проверка версии CMake.
 
-set(PROJECT_NAME set)
+set(PROJECT_NAME 381706-2_savosina_labs)
 project(${PROJECT_NAME})
 
-# TODO(Kornyakov): not sure if these lines are needed
-set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE)
-if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE Release)
+set(gtest)
+set(include)
+set(samples)
+set(sln)
+set(test)
+
+set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE) 
+# Создается переменная CMAKE_CONFIGURATION_TYPES со значением "Debug;Release" 
+# и меткой/разделом Configs, переменная сохраниется в специальном файле доступном 
+# из всех файлов,
+if(NOT CMAKE_BUILD_TYPE) # проверка имеющихся у компилятора вариантов сборки
+  set(CMAKE_BUILD_TYPE Release) #Если нет то устанавливаем Release
 endif()
 
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/bin)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE})
+file(GLOB hdrs "*.h*") #Добавляем в переменную hdrs все файлы с расширением .h
+file(GLOB srcs "*.cpp") #Добавляем в переменную srcs все файлы с расширением .h
 
-set(MP2_LIBRARY "${PROJECT_NAME}")
-set(MP2_TESTS   "test_${PROJECT_NAME}")
-set(MP2_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/include")
-
-include_directories("${MP2_INCLUDE}" gtest)
-
-# BUILD
-add_subdirectory(src)
-add_subdirectory(samples)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include 
+${CMAKE_CURRENT_SOURCE_DIR}/gtest)
 add_subdirectory(gtest)
+add_subdirectory(include)
+add_subdirectory(samples)
+add_subdirectory(sln)
 add_subdirectory(test)
 
 # REPORT

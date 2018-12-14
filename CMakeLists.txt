@@ -18,8 +18,9 @@ endif()
 file(GLOB hdrs "*.h*") #Добавляем в переменную hdrs все файлы с расширением .h
 file(GLOB srcs "*.cpp") #Добавляем в переменную srcs все файлы с расширением .h
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include 
-${CMAKE_CURRENT_SOURCE_DIR}/gtest)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/gtest)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/test)
 
 add_subdirectory(include include)
 add_subdirectory(samples samples)

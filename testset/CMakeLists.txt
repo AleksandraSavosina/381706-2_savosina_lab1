@@ -2,4 +2,4 @@ file(GLOB hdrs "*.h*")
 file(GLOB srcs "*.cpp")
 
 add_executable(${settest} ${srcs} ${hdrs})
-target_link_libraries(${settestsettest} ${setlib} gtest)
+target_link_libraries(${settest} ${setlib} gtest)

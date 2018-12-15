@@ -7,5 +7,7 @@ before_script:
   - cd ../build
 script:
   - cmake ../381706-2_savosina_labs
+  - ./test/test
+  - ./gtest/gtest
 notifications:
   email: false

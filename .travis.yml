@@ -8,6 +8,7 @@ before_script:
 script:
   - cmake ../381706-2_savosina_labs
   - make -j
-  - ./Set/Set
+  - cd ./bin/
+  - ./381706-2_savosina_labs
 notifications:
   email: false

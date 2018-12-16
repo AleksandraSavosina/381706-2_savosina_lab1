@@ -22,9 +22,9 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/gtest)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/mtest)
 
-add_subdirectory(include include)
-add_subdirectory(samples samples)
-add_subdirectory(mtest mtest)
+add_subdirectory(include)
+add_subdirectory(samples)
+add_subdirectory(mtest)
 
 # REPORT
 message( STATUS "")

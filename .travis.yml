@@ -7,5 +7,6 @@ before_script:
   - cd ../build
 script:
   - cmake ../381706-2_savosina_labs
+  - make -j
 notifications:
   email: false

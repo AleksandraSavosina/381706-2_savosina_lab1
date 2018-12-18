@@ -9,6 +9,6 @@ script:
   - cmake ../381706-2_savosina_labs
   - make -j
   - cd ./bin/
-  - ./381706-2_savosina_labs
+  - ./lab1/base_test/test_tset
 notifications:
   email: false

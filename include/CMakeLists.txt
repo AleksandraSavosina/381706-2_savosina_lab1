@@ -1,4 +1,7 @@
-﻿file(GLOB hdrs "*.h*") #Добавляем в переменную hdrs все файлы с расширением .h
-file(GLOB srcs "*.cpp")#Добавляем в переменную srcs все файлы с расширением .h
+set(target ${MP2_LIBRARY})
 
-add_library(${include} STATIC ${srcs} ${hdrs})
+file(GLOB hdrs "*.h*" "${MP2_INCLUDE}/*.h*")
+file(GLOB srcs "*.cpp")
+
+add_library(${target} STATIC ${srcs} ${hdrs})
+target_link_libraries(${target} ${LIBRARY_DEPS})

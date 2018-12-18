@@ -1,27 +1,19 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.8) #Проверка версии CMake.
 
-set(PROJECT_NAME 381706-2_savosina_labs)
-project(${PROJECT_NAME})
+set(PROJECT_NAME 381706-2_savosina_labs) #Создаем обычную локальную переменную с именем проекта
+project(${PROJECT_NAME}) # Название проекта 
 
-# TODO(Kornyakov): not sure if these lines are needed
-set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE)
-if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE Release)
+set(vector vector) #Переменная с именем библиотеки
+set(vectorlib vectorlib) #Переменная с именем библиотеки
+
+set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE) #Создается переменная CMAKE_CONFIGURATION_TYPES со значением "Debug;Release" и меткой/разделом Configs, переменная сохраниется в специальном файле доступном из всех файлов,
+if(NOT CMAKE_BUILD_TYPE) # проверка имеющихся у компилятора вариантов сборки
+  set(CMAKE_BUILD_TYPE Release) #Если нет то устанавливаем Release
 endif()
 
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/bin)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vectorlib)
 
-set(MP2_LIBRARY "${PROJECT_NAME}")
-set(MP2_TESTS   "test_${PROJECT_NAME}")
-set(MP2_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/include")
-
-include_directories("${MP2_INCLUDE}" gtest)
-
-# BUILD
-add_subdirectory(lab1)
+add_subdirectory(lab1) #Собираем проект в поддиректории vector
 
 # REPORT
 message( STATUS "")

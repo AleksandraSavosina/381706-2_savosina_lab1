@@ -1,7 +1,3 @@
-// Stack.cpp: определяет точку входа для консольного приложения.
-//
-
-#include "stdafx.h"
 #include "Stack.h"
 
 int main()

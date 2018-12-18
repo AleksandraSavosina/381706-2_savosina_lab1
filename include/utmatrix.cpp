@@ -1,10 +1,9 @@
-#include "stdafx.h"
-#include "Stack.h"
+#include "utmatrix.h"
 
 
 //
 //template <class T>
-//TStack<T>::TStack()				// конструктор по умолчанию
+//TStack<T>::TStack()				// ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЇГ® ГіГ¬Г®Г«Г·Г Г­ГЁГѕ
 //{
 //	size = 0;
 //	mas = 0;
@@ -12,7 +11,7 @@
 //}
 //
 //template <class T>
-//TStack<T>::TStack(int _size)	 // конструктор с параметром
+//TStack<T>::TStack(int _size)	 // ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° Г± ГЇГ Г°Г Г¬ГҐГІГ°Г®Г¬
 //{
 //	if (_size < 0)
 //		throw "negative size";
@@ -31,13 +30,13 @@
 //	}
 //}
 //
-//template <class T>				// деструктор
+//template <class T>				// Г¤ГҐГ±ГІГ°ГіГЄГІГ®Г°
 //TStack<T>::~TStack()
 //{
 //	delete[] mas;
 //}
 //
-//template <class T>				// конструктор копирования
+//template <class T>				// ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГї
 //TStack<T> :: TStack(TStack &h)
 //{
 //	size = h.size;
@@ -52,7 +51,7 @@
 //	}
 //}
 //
-//template <class T>				// проверка на пустоту
+//template <class T>				// ГЇГ°Г®ГўГҐГ°ГЄГ  Г­Г  ГЇГіГ±ГІГ®ГІГі
 //bool TStack<T>::IsEmpty() 
 //{
 //	if (top == 0)
@@ -63,13 +62,13 @@
 //		return false;
 //}
 //
-//template <class T>				// проверка на полноту
+//template <class T>				// ГЇГ°Г®ГўГҐГ°ГЄГ  Г­Г  ГЇГ®Г«Г­Г®ГІГі
 //bool TStack<T>::IsFull() 
 //{
 //	return !IsEmpty();
 //}
 //
-//template <class T>				// положим что-нибудь
+//template <class T>				// ГЇГ®Г«Г®Г¦ГЁГ¬ Г·ГІГ®-Г­ГЁГЎГіГ¤Гј
 //void TStack<T>::Put(T h) 
 //{
 //	if (IsFull())
@@ -81,7 +80,7 @@
 //	}
 //}
 //
-//template <class T>				// возьмём что-нибудь
+//template <class T>				// ГўГ®Г§ГјГ¬ВёГ¬ Г·ГІГ®-Г­ГЁГЎГіГ¤Гј
 //T TStack<T>::Get() 
 //{
 //	if (IsEmpty())

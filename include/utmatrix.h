@@ -258,7 +258,7 @@ public:
 };
 
 template <class ValType>
-TMatrix<ValType>::TMatrix(int s): TVector<TVector<ValType>>(s)
+TMatrix<ValType>::TMatrix(int s): TVector<TVector<ValType> >(s)
 {
 	if ( s > MAX_MATRIX_SIZE)
 		throw "error";

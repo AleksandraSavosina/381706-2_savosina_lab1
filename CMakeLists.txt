@@ -16,7 +16,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/lab1/base)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/lab2/base)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/lab3/base)
 
-add_subdirectory(gtest)
+add_subdirectory(lab1/gtest)
 add_subdirectory(lab1) #Собираем проект в поддиректории vector
 add_subdirectory(lab2)
 add_subdirectory(lab3)

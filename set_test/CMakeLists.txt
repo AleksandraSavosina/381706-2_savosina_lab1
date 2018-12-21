@@ -1,5 +1,5 @@
 file(GLOB hdrs "*.h*")
 file(GLOB srcs "*.cpp")
 
-add_executable(${base_test} ${srcs} ${hdrs})
-target_link_libraries(${base_test} ${base} gtest)
+add_executable(${set_test} ${srcs} ${hdrs})
+target_link_libraries(${set_test} ${set} gtest)

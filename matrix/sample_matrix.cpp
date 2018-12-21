@@ -1,46 +1,39 @@
-// ННГУ, ВМК, Курс "Методы программирования-2", С++, ООП
-//
-// sample_matrix.cpp - Copyright (c) Гергель В.П. 07.05.2001
-//   Переработано для Microsoft Visual Studio 2008 Сысоевым А.В. (20.04.2015)
-//
-// Тестирование верхнетреугольной матрицы
-
 #include <iostream>
 #include "utmatrix.h"
 #include <ctime>
 //---------------------------------------------------------------------------
 
-void main()
-{
-	int n;
+  void main()
+  {
+  int n;
 
-	setlocale(LC_ALL, "Russian");
+  setlocale(LC_ALL, "Russian");
 
-	cout << "Введите размер матрицы" << endl;
-	cin >> n ;
-	TVector<int> f(n);
-	TMatrix<int> a(n), b(n), c(n);
-	int i, j;
+  cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г°Г Г§Г¬ГҐГ° Г¬Г ГІГ°ГЁГ¶Г»" << endl;
+  cin >> n ;
+  TVector<int> f(n);
+  TMatrix<int> a(n), b(n), c(n);
+  int i, j;
 
-	setlocale(LC_ALL, "Russian");
-	cout << "Тестирование программ поддержки представления треугольных матриц"
-		<< endl;
-	for (i = 0; i < n; i++)
-		for (j = i; j < n; j++)
-		{
-			a[i][j] = i * 10 + j;
-			b[i][j] = (i * 10 + j) * 100;
-		}
+  setlocale(LC_ALL, "Russian");
+  cout << "Г’ГҐГ±ГІГЁГ°Г®ГўГ Г­ГЁГҐ ГЇГ°Г®ГЈГ°Г Г¬Г¬ ГЇГ®Г¤Г¤ГҐГ°Г¦ГЄГЁ ГЇГ°ГҐГ¤Г±ГІГ ГўГ«ГҐГ­ГЁГї ГІГ°ГҐГіГЈГ®Г«ГјГ­Г»Гµ Г¬Г ГІГ°ГЁГ¶"
+	<< endl;
+  for (i = 0; i < n; i++)
+    for (j = i; j < n; j++)
+    {
+      a[i][j] = i * 10 + j;
+      b[i][j] = (i * 10 + j) * 100;
+    }
 
-	long float start_time = clock();
-	c = a + b;
-	long float end_time = clock();
+  long float start_time = clock();
+  c = a + b;
+  long float end_time = clock();
 
-	cout << "Сложение матриц:" << endl;
-	long float search_time = end_time - start_time;
-	cout << search_time << " миллисекунд" << endl;	// 1 сек = 1000 милисек
+  cout << "Г‘Г«Г®Г¦ГҐГ­ГЁГҐ Г¬Г ГІГ°ГЁГ¶:" << endl;
+  long float search_time = end_time - start_time;
+  cout << search_time << " Г¬ГЁГ«Г«ГЁГ±ГҐГЄГіГ­Г¤" << endl;	// 1 Г±ГҐГЄ = 1000 Г¬ГЁГ«ГЁГ±ГҐГЄ
 
-	cout << "Matrix a = " << endl << a << endl;
-	cout << "Matrix b = " << endl << b << endl;
-	cout << "Matrix c = a + b" << endl << c << endl;
+  cout << "Matrix a = " << endl << a << endl;
+  cout << "Matrix b = " << endl << b << endl;
+  cout << "Matrix c = a + b" << endl << c << endl;
 }

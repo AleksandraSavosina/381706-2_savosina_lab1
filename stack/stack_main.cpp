@@ -2,19 +2,58 @@
 
 int main()
 {
-	int n;
-	cout << "hi" << endl;
-	cin >> n;
 	
-	TStack<int> Help(n);
+  int n;
+  cout << "Enter size of stack: ";
+  cin >> n;
 
-	if (Help.IsEmpty() == true)
+
+  TStack<int> help(n);
+  int j = 0;
+  cout << "Put - 1 / Get - 2 / End - 0" << endl;
+  int elem;
+  cin >> j;
+  while (j != 0)
+  {
+    switch (j)
+    {
+      case 1: 
+	if (help.IsFull())
 	{
-		cout << "Stack is empty" << endl;
+	  cout << "Sorry. Stack is full" << endl;
+	  break;
 	}
-	else
-		cout << "Stack is full" << endl;
+	cout << "Put: " << endl;
+	cin >> elem;
+	help.Put(elem);
+	break;
+      case 2:
+	if (help.IsEmpty())
+        {
+	  cout << "Sorry. Stack is empty" << endl;
+	  break;
+	}
+	cout << "Get: ";
+	cout << help.Get() << endl;
+	break;
+      default:
+	break;
+      }
+	
+      cout << "Enter your choice: ";
+      cin >> j;
+      if ((j < 0) || (j > 3))
+      {
+	cout << "!!! Incorrect value !!!" << endl;
+	break;
+      }
+    }
 
-    return 0;
+	if (help.IsEmpty() == true)
+	  cout << "Stack is empty" << endl;
+	else
+	  cout << "Stack is full" << endl;
+
+	return 0;	
 }
 

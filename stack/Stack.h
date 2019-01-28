@@ -10,81 +10,81 @@ template <class T>
 class TStack
 {
 protected:
-	int size;		// размер стека
-	T* mas;			// элементы стека
-	int top;		// верх
+  int size;		// Г°Г Г§Г¬ГҐГ° Г±ГІГҐГЄГ 
+  T* mas;			// ГЅГ«ГҐГ¬ГҐГ­ГІГ» Г±ГІГҐГЄГ 
+  int top;		// ГўГҐГ°Гµ
 public:
-	TStack()				// конструктор по умолчанию
-	{
-		size = 0;
-		mas = 0;
-		top = 0;
-	}
-	TStack(int _size)		// конструктор с параметром
-	{
-		if (_size < 0)
-			throw "negative size";
+  TStack()				// ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЇГ® ГіГ¬Г®Г«Г·Г Г­ГЁГѕ
+  {
+    size = 0;
+    mas = 0;
+    top = 0;
+  }
+  TStack(int _size)		// ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° Г± ГЇГ Г°Г Г¬ГҐГІГ°Г®Г¬
+  {
+    if (_size < 0)
+      throw "negative size";
 
-		if (_size == 0)
-		{
-			size = 0;
-			mas = 0;
-			top = 0;
-		}
-		else
-		{
-			mas = new T[_size];
-			size = _size;
-			top = 0;
-		}
-	}
-	TStack(TStack &h)		// конструктор копирования
-	{
-		size = h.size;
-		top = h.top;
-		if (size == 0)
-			mas = 0;
-		else
-		{
-			mas = new T[size];
-			for (int i = 0; i < size; i++)
-				mas[i] = h.mas[i];
-		}
-	}
+    if (_size == 0)
+    {
+      size = 0;
+      mas = 0;
+      top = 0;
+    }
+    else
+    {
+      mas = new T[_size];
+      size = _size;
+      top = 0;
+    }
+  }
+  TStack(TStack &h)		// ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГї
+  {
+    size = h.size;
+    top = h.top;
+    if (size == 0)
+      mas = 0;
+    else
+    {
+      mas = new T[size];
+      for (int i = 0; i < size; i++)
+        mas[i] = h.mas[i];
+    }
+  }
 
-	~TStack()				// деструктор
-	{
-		delete[] mas;
-	}
+  ~TStack()				// Г¤ГҐГ±ГІГ°ГіГЄГІГ®Г°
+  {
+    delete[] mas;
+  }
 
-	void Put(T h)			// положить
-	{
-		if (IsFull())
-			throw "stack is full";
-		else
-		{
-			mas[top] = h;
-			top++;
-		}
-	}
-	T Get()				// взять
-	{
-		if (IsEmpty())
-			throw "stack is empty";
-		else
-		{
-			top--;
-			return mas[top];
-		}
-	}
-	bool IsFull()			// проверка на полноту
-	{
-		return (top >= size);
-	}
-	bool IsEmpty()			// проверка на пустоту
-	{
-		return (top == 0);
-	}
+  void Put(T h)			// ГЇГ®Г«Г®Г¦ГЁГІГј
+  {
+    if (IsFull())
+      throw "stack is full";
+    else
+    {
+      mas[top] = h;
+      top++;
+    }
+  }
+  T Get()				// ГўГ§ГїГІГј
+  {
+    if (IsEmpty())
+      throw "stack is empty";
+    else
+    {
+      top--;
+      return mas[top];
+    }
+  }
+  bool IsFull()			// ГЇГ°Г®ГўГҐГ°ГЄГ  Г­Г  ГЇГ®Г«Г­Г®ГІГі
+  {
+    return (top >= size);
+  }
+  bool IsEmpty()			// ГЇГ°Г®ГўГҐГ°ГЄГ  Г­Г  ГЇГіГ±ГІГ®ГІГі
+  {
+    return (top == 0);
+  }
 };
 
 #endif

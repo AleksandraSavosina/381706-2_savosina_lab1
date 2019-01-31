@@ -2,4 +2,4 @@
 file(GLOB srcs "*.cpp")#Äîáàâëÿåì â ïåğåìåííóş srcs âñå ôàéëû ñ ğàñøèğåíèåì .h
 
 add_executable(${queue_test} ${srcs} ${hdrs})
-target_link_libraries(${queue_test} ${queue})
+target_link_libraries(${queue_test} ${queue} gtest)

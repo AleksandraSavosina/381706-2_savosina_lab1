@@ -9,6 +9,7 @@ script:
   - cmake ../381706-2_savosina_labs
   - make -j
   - ls
+  -./list_test/test_list
   -./stack_test/test_stack
 notifications:
   email: false

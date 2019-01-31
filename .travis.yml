@@ -8,7 +8,5 @@ before_script:
 script:
   - cmake ../381706-2_savosina_labs
   - make -j
-  - ls
-  -./stack_test/test_stack
 notifications:
   email: false

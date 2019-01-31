@@ -1,4 +1,4 @@
-﻿cmake_minimum_required(VERSION 2.8) #Проверка версии CMake.
+﻿cmake_minimum_required(VERSION 3.13) #Проверка версии CMake.
 
 set(PROJECT_NAME 381706-2_savosina_labs) #Создаем обычную локальную переменную с именем проекта
 project(${PROJECT_NAME}) # Название проекта 

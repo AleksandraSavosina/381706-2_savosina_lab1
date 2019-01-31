@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main(char** args)
+int main(int num, char** args)
 {
 
 	return 0;

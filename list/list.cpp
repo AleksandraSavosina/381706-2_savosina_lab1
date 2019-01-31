@@ -6,17 +6,17 @@ void List<T>::Insert(int index, T value) // добавление куда угодно
 {
 	int i = 0;
 	Node<T>* current = pFirst;
-	if (current == nullptr)
+	if (current == 0)
 	{
 		Node<T>* newOne = new Node<T>();
-		newOne->pNext = nullptr;
+		newOne->pNext = 0;
 		newOne->value = value;
 
 		pFirst = newOne;
 	}
 	else
 	{
-		while (i < index && current->pNext != nullptr)
+		while (i < index && current->pNext != 0)
 		{
 			current = current->pNext;
 			++i;
@@ -47,7 +47,7 @@ T List<T>::operator[](int index)
 	int i = 0;
 	Node<T>* current = pFirst;
 
-	while (i < index && current->pNext != nullptr)
+	while (i < index && current->pNext != 0)
 	{
 		current = current->pNext;
 		++i;
@@ -73,7 +73,7 @@ void List<T>::Delete(int index)
 	int i = 0;
 	Node<T>* current = pFirst;
 
-	while (i < index && current->pNext != nullptr)
+	while (i < index && current->pNext != 0)
 	{
 		current = current->pNext;
 		++i;

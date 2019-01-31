@@ -10,7 +10,7 @@ protected:
 	Node<T>* pFirst;    // указатель на первый эл-т
 	int size;			// текущий размер
 public:
-	List() { pFirst = nullptr; size = 0; }
+	List() { pFirst = 0; size = 0; }
 	List(const List<T>& list) 
 	{
 		size = list.size;
@@ -29,7 +29,7 @@ public:
 		if (size != 0)
 		{
 			Node<T>* current = pFirst;
-			while (current != nullptr)
+			while (current != 0)
 			{
 				Node<T>* tmp = current;
 				current = current->pNext;				

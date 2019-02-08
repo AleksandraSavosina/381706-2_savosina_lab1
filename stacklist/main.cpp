@@ -1,5 +1,4 @@
 ﻿#include <iostream>
-
 #include "stacklist.h"
 
 using namespace std;

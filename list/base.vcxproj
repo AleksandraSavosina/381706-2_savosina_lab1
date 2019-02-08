@@ -11,11 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="list.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\stacklist\main.cpp" />
+    <ClCompile Include="..\stacklist\stacklist.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="list.h" />
+    <ClInclude Include="..\stacklist\stacklist.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4854D7B0-72B7-4276-BE33-BFADBC979165}</ProjectGuid>

@@ -5,6 +5,5 @@ using namespace std;
 
 int main(int num, char** args)
 {
-
-	return 0;
+  return 0;
 }

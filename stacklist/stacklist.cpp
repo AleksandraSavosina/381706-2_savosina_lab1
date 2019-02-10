@@ -1,33 +1,33 @@
 #include "stacklist.h";
 
-// убрать?
+// ГіГЎГ°Г ГІГј?
 template <class T>
-void StackList<T>::Push(T value) // добавление в начало
+void StackList<T>::Push(T value) // Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ Гў Г­Г Г·Г Г«Г®
 {
-	Node<T>* newOne = new Node<T>();
-	newOne->pNext = pFirst;
-	newOne->value = value;
-	pFirst = newOne;
-	++size;
+  Node<T>* newOne = new Node<T>();
+  newOne->pNext = pFirst;
+  newOne->value = value;
+  pFirst = newOne;
+  ++size;
 }
 
 template <class T>
 T StackList<T>::Pop()
 {
-	if (index >= size || index < 0)
-		throw "out of range";
+  if (index >= size || index < 0)
+    throw "out of range";
 
-	Node<T> tmp = *pFirst;
-	Node<T>* p = pFirst; // указатель на первый элемент
+  Node<T> tmp = *pFirst;
+  Node<T>* p = pFirst; // ГіГЄГ Г§Г ГІГҐГ«Гј Г­Г  ГЇГҐГ°ГўГ»Г© ГЅГ«ГҐГ¬ГҐГ­ГІ
 
-	pFirst = pFirst->pNext;
-	delete p;
-	--size;
-	return tmp;
+  pFirst = pFirst->pNext;
+  delete p;
+  --size;
+  return tmp;
 }
 
 template <class T>
 bool StackList<T>::IsEmpty()
 {
-	return (pFirst == 0);
+  return (pFirst == 0);
 }

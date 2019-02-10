@@ -11,10 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Stack.h" />
+    <ClCompile Include="stack_main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stack_main.cpp" />
+    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4854D7B0-72B7-4276-BE33-BFADBC979165}</ProjectGuid>

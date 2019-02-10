@@ -1,5 +1,5 @@
-﻿file(GLOB hdrs "*.h*") #Äîáàâëÿåì â ïåğåìåííóş hdrs âñå ôàéëû ñ ğàñøèğåíèåì .h
-file(GLOB srcs "*.cpp")#Äîáàâëÿåì â ïåğåìåííóş srcs âñå ôàéëû ñ ğàñøèğåíèåì .h
+﻿file(GLOB hdrs "*.h*") #Добавляем в переменную hdrs все файлы с расширением .h
+file(GLOB srcs "*.cpp")#Добавляем в переменную srcs все файлы с расширением .h
 
-add_executable(${queue} ${srcs} ${hdrs})
-target_link_libraries(${queue})
+add_executable(${queue} ${srcs} ${hdrs}) #Создаем проект с именем из переменной ${PROJECT_NAME}, в него добавляются файлы из переменных ${srcs} и ${hdrs}
+target_link_libraries(${queue} ${queue_lib}) 

@@ -13,6 +13,8 @@ set(list list)
 set(list_test list_test)
 set(queue queue)
 set(queue_test queue_test)
+set(stacklist stack)
+set(stacklist_test stacklist_test)
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE) #Создается переменная CMAKE_CONFIGURATION_TYPES со значением "Debug;Release" и меткой/разделом Configs, переменная сохраниется в специальном файле доступном из всех файлов,
 if(NOT CMAKE_BUILD_TYPE) # проверка имеющихся у компилятора вариантов сборки
@@ -25,9 +27,11 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/stack)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/gtest)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/queue)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/list)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/stacklist)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/list_test)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/stack_test)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/queue_test)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/stacklist_test)
 
 
 
@@ -40,6 +44,7 @@ add_subdirectory(queue)
 add_subdirectory(list_test)
 add_subdirectory(queue_test)
 add_subdirectory(stack_test)
+add_subdirectory(stacklist_test)
 
 # REPORT
 message( STATUS "")

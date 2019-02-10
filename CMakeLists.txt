@@ -28,10 +28,10 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/gtest)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/queue)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/list)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/stacklist)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/list_test)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/stack_test)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/queue_test)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/stacklist_test)
+#include_directories(${CMAKE_CURRENT_SOURCE_DIR}/list_test)
+#include_directories(${CMAKE_CURRENT_SOURCE_DIR}/stack_test)
+#include_directories(${CMAKE_CURRENT_SOURCE_DIR}/queue_test)
+#include_directories(${CMAKE_CURRENT_SOURCE_DIR}/stacklist_test)
 
 
 

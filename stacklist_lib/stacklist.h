@@ -11,14 +11,14 @@ protected:
   int size;			// текущий размер
 public:
   StackList() { pFirst = 0; size = 0; }
-  StackList(const List<T>& list) 
-  {
-    size = list.size;
-    for (int i = 0; i < list.size; i++)
-    {
-      Add(list[i]);
-    }
-  }
+ StackList(const StackList<T>& list)
+	{
+		size = list.size;
+		for (int i = 0; i < list.size; i++)
+		{
+			Add(list[i]);
+		}
+	}
 
   void Push(T v);
   T Pop();

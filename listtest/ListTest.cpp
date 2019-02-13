@@ -18,7 +18,7 @@ TEST(List, can_get_item)
   List<int> list;
   list.Add(2);
 
-  auto a = list[0];
+  List a = list[0];
   EXPECT_EQ(a, 2);
 }
 
@@ -36,7 +36,7 @@ TEST(List, can_get_inserted_item)
   list.Add(1);
   list.Insert(0, 2);
 
-  auto a = list[1];
+  List a = list[1];
   EXPECT_EQ(a, 2);
 }
 

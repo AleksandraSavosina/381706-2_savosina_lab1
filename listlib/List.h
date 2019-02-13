@@ -20,12 +20,12 @@ public:
     }
   }
 
-  void Add(T v)
+  void Add(T value)
   {
     Insert(size, value);
   }
   
-  T operator[](int i)
+  T operator[](int index)
   {
     if (index >= size || index < 0)
       throw "out of range";
@@ -42,7 +42,7 @@ public:
     return current->value;
   }
   
-  void Insert(int i, T value)
+  void Insert(int index, T value)
   {
     int i = 0;
     Node<T>* current = pFirst;
@@ -68,7 +68,7 @@ public:
   
     ++size;
   }
-  void Delete(int i)
+  void Delete(int index)
   {
     if (index >= size || index < 0)
       throw "out of range";

@@ -55,7 +55,7 @@
 
 #include <limits>
 #include <ostream>
-#include <Stack>
+#include <vector>
 
 // Copyright 2005, Google Inc.
 // All rights reserved.

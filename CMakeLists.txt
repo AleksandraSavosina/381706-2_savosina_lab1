@@ -4,8 +4,8 @@ set(PROJECT_NAME 381706-2_savosina_labs) #Ñîçäàåì îáû÷íóþ ëîêà
 project(${PROJECT_NAME}) # Íàçâàíèå ïðîåêòà
 
 set(Stack Stack)
-set(StackLib StackLib)
-set(StackTest StackTest)
+set(stacklib stacklib)
+set(stacktest stacktest)
 
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE) #Ñîçäàåòñÿ ïåðåìåííàÿ CMAKE_CONFIGURATION_TYPES ñî çíà÷åíèåì "Debug;Release" è ìåòêîé/ðàçäåëîì Configs, ïåðåìåííàÿ ñîõðàíèåòñÿ â ñïåöèàëüíîì ôàéëå äîñòóïíîì èç âñåõ ôàéëîâ,
@@ -13,14 +13,14 @@ if(NOT CMAKE_BUILD_TYPE) # ïðîâåðêà èìåþùèõñÿ ó êîìïèëÿ
   set(CMAKE_BUILD_TYPE Release) #Åñëè íåò òî óñòàíàâëèâàåì Release
 endif()
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/StackLib)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/stacklib)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/gtest)
 
 
 
 add_subdirectory(Stack)
-add_subdirectory(StackLib)
-add_subdirectory(StackTest)
+add_subdirectory(stacklib)
+add_subdirectory(stacktest)
 
 
 file(GLOB hdrs "*.h*") #Äîáàâëÿåì â ïåðåìåííóþ hdrs âñå ôàéëû ñ ðàñøèðåíèåì .h

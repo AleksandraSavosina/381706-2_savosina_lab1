@@ -21,6 +21,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/gtest)
 add_subdirectory(Stack)
 add_subdirectory(stacklib)
 add_subdirectory(stacktest)
+add_subdirectory(gtest)
 
 
 file(GLOB hdrs "*.h*") #Äîáàâëÿåì â ïåðåìåííóþ hdrs âñå ôàéëû ñ ðàñøèðåíèåì .h

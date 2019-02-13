@@ -15,10 +15,11 @@ TEST(List, can_add_item)
 
 TEST(List, can_get_item)
 {
+  List<int> a;
   List<int> list;
   list.Add(2);
 
-  List a = list[0];
+  a = list[0];
   EXPECT_EQ(a, 2);
 }
 
@@ -31,12 +32,13 @@ TEST(List, can_insert_item)
 }
 TEST(List, can_get_inserted_item)
 {
+  List<int> a;
   List<int> list;
   list.Add(3);
   list.Add(1);
   list.Insert(0, 2);
 
-  List a = list[1];
+  a = list[1];
   EXPECT_EQ(a, 2);
 }
 

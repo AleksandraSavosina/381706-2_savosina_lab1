@@ -68,7 +68,34 @@ public:
   
     ++size;
   }
-  void Delete(int i);
+  void Delete(int i)
+  {
+    if (index >= size || index < 0)
+      throw "out of range";
+
+    if (index == 0)
+    {
+      Node<T>* tmp = pFirst;
+      pFirst = pFirst->pNext;
+      delete tmp;
+      return;
+    }
+
+    int i = 0;
+    Node<T>* current = pFirst;
+
+    while (i < index && current->pNext != 0)
+    {
+      current = current->pNext;
+      ++i;
+    }
+
+    Node<T>* tmp = current->pNext;
+    current->pNext = current->pNext->pNext;
+    delete tmp;
+
+    --size;
+  }
 
   ~List() {
     if (size != 0)

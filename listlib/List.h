@@ -20,9 +20,54 @@ public:
     }
   }
 
-  void Add(T v);
-  T operator[](int i);
-  void Insert(int i, T value);
+  void Add(T v)
+  {
+    Insert(size, value);
+  }
+  
+  T operator[](int i)
+  {
+    if (index >= size || index < 0)
+      throw "out of range";
+
+    int i = 0;
+    Node<T>* current = pFirst;
+
+    while (i < index && current->pNext != 0)
+    {
+      current = current->pNext;
+      ++i;
+    }
+
+    return current->value;
+  }
+  
+  void Insert(int i, T value)
+  {
+    int i = 0;
+    Node<T>* current = pFirst;
+    if (current == 0)
+    {
+      Node<T>* newOne = new Node<T>();
+      newOne->pNext = 0;
+      newOne->value = value;
+      pFirst = newOne;
+    }
+    else
+    {
+      while (i < index && current->pNext != 0)
+      {
+        current = current->pNext;
+        ++i;
+      }
+      Node<T>* newOne = new Node<T>();
+      newOne->pNext = current->pNext;
+      newOne->value = value;
+      current->pNext = newOne;
+    }
+  
+    ++size;
+  }
   void Delete(int i);
 
   ~List() {

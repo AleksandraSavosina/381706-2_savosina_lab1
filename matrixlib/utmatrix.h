@@ -95,7 +95,7 @@ TVector<ValType>::TVector(const TVector<ValType> &v)
 template <class ValType>
 TVector<ValType>::~TVector()
 {
-	delete[] pVector;
+	delete[] this->pVector;
 } /*-------------------------------------------------------------------------*/
 
 template <class ValType> // доступ - по индексу элемента достать значение (индексация другая)
@@ -134,7 +134,7 @@ TVector<ValType>& TVector<ValType>::operator=(const TVector &v)
 {
   if (this->size != v.size)
   {
-    delete[] pVector;
+    delete[] this->pVector;
 	this->pVector = new ValType[v.size];
 	this->size = v.size;
   }
@@ -303,7 +303,7 @@ TMatrix<ValType>& TMatrix<ValType>::operator=(const TMatrix<ValType> &mt)
   if (this->size != mt.size)
   {
 	  this->size = mt.size;
-    delete[] pVector;
+    delete[] this->pVector;
 	this->pVector = new TVector<ValType>[mt.size];
   }
 

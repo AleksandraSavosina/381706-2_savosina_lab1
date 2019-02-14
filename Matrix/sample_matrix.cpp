@@ -25,12 +25,12 @@
       b[i][j] = (i * 10 + j) * 100;
     }
 
-  long float start_time = clock();
+  float start_time = clock();
   c = a + b;
-  long float end_time = clock();
+  float end_time = clock();
 
   cout << "Ñëîæåíèå ìàòðèö:" << endl;
-  long float search_time = end_time - start_time;
+  float search_time = end_time - start_time;
   cout << search_time << " ìèëëèñåêóíä" << endl;	// 1 ñåê = 1000 ìèëèñåê
 
   cout << "Matrix a = " << endl << a << endl;

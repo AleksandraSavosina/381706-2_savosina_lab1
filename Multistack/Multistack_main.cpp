@@ -1,6 +1,5 @@
-// Stack.cpp: определяет точку входа для консольного приложения.
-//
-#include "Stack.h"
+#include "MStack.h"
+#include <iostream>
 
 using namespace std;
 
@@ -9,7 +8,7 @@ int main()
   int n;
   cout << "Enter size of stack: ";
   cin >> n;
-  TStack<int> help(n);
+  MStack<int> help(20,2);
   int j = 0;
   cout << "Put - 1 / Get - 2 / End - 0" << endl;
   int elem;
@@ -27,17 +26,17 @@ int main()
 
       cout << "Put: " << endl;
       cin >> elem;
-      help.Put(elem);     
+      help.Put(elem,0);
       break;
     case 2:
       if (help.IsEmpty())
       {
         cout << "Sorry. Stack is empty" << endl;
         break;
-      }
+			}
 
       cout << "Get: ";
-      cout << help.Get() << endl;
+      cout << help.Get(0) << endl;
       break;
     default:
       break;
@@ -57,4 +56,3 @@ int main()
     cout << "Stack is full" << endl;
   return 0;
 }
-

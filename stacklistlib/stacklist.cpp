@@ -1,4 +1,4 @@
-#include "stacklist.h";
+#include "stacklist.h"
 
 // óáðàòü?
 //template <class T>

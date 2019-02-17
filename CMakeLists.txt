@@ -18,7 +18,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/gtest)
 
 
 
-add_subdirectory(Multitack)
+add_subdirectory(Multistack)
 add_subdirectory(multistacklib)
 add_subdirectory(multistacktest)
 add_subdirectory(gtest)

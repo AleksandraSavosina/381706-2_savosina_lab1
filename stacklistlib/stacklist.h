@@ -11,18 +11,44 @@ protected:
   int size;			// текущий размер
 public:
   StackList() { pFirst = 0; size = 0; }
- StackList(const StackList<T>& list)
-	{
-		size = list.size;
-		for (int i = 0; i < list.size; i++)
-		{
-			Add(list[i]);
-		}
-	}
+  StackList(const StackList<T>& list)
+  {
+    size = list.size;
+    for (int i = 0; i < list.size; i++)
+    {
+      Add(list[i]);
+    }
+  }
 
-  void Push(T v);
-  T Pop();
-  bool IsEmpty();
+  void Push(T v)
+  {
+    Node<T>* newOne = new Node<T>();
+    newOne->pNext = pFirst;
+    newOne->value = value;
+    pFirst = newOne;
+    ++size;
+  }
+
+	  
+	  
+  T Pop()
+  {
+    if (index >= size || index < 0)
+      throw "out of range";
+
+    Node<T> tmp = *pFirst;
+    Node<T>* p = pFirst; // óêàçàòåëü íà ïåðâûé ýëåìåíò
+
+    pFirst = pFirst->pNext;
+    delete p;
+    --size;
+    return tmp;
+  }	
+	  
+  bool IsEmpty()
+  {
+    return (pFirst == 0);
+  }
 
   ~StackList() {
     if (size != 0)

@@ -40,6 +40,6 @@ int main()
 	}
 	if (t.IsEmpty() == true)
 		cout << "Stack is empty" << endl;
-	system("pause");
+	//system("pause");
 	return 0;	
 }

@@ -24,7 +24,7 @@ public:
   {
     Node<T>* newOne = new Node<T>();
     newOne->pNext = pFirst;
-    newOne->value = value;
+    newOne->value = this->value;
     pFirst = newOne;
     ++size;
   }

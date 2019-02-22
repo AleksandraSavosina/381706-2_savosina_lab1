@@ -28,9 +28,7 @@ public:
     pFirst = newOne;
     ++size;
   }
-
-	  
-	  
+	
   T Pop()
   {
     if (index >= size || index < 0)

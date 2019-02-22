@@ -24,7 +24,7 @@ public:
   {
     Node<T>* newOne = new Node<T>();
     newOne->pNext = pFirst;
-    newOne.value = value; // newOne->value = value;
+    newOne->value = value; // newOne->value = value;
     pFirst = newOne;
     ++size;
   }
@@ -36,7 +36,7 @@ public:
     if (index >= size || index < 0)
       throw "out of range";
 
-    Node<T> tmp = *pFirst;
+    T tmp = pFirst->value;
     Node<T>* p = pFirst; // óêàçàòåëü íà ïåðâûé ýëåìåíò
 
     pFirst = pFirst->pNext;

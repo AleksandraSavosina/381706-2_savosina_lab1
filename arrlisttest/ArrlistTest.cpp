@@ -93,7 +93,7 @@ TEST(ArrList, throws_when_put_in_full_list_in_finish)
 TEST(ArrList, throws_when_get_in_empty_list_in_start)
 {
   TArrList <int> list(1);
-  ASERT_ANY_THROW(list.PopStart());
+  ASSERT_ANY_THROW(list.PopStart());
 }
 
 TEST(ArrList, throws_when_in_empty_list_get__in_end)

@@ -2,6 +2,8 @@
 
 #include "queue.h"
 
+using namespace std;
+
 template <class T>
 class TArrList
 {

@@ -31,7 +31,7 @@ TEST(ArrList, can_get_in_start)
   TArrList <int> list(2);
   list.PushStart(5);
   list.PushStart(7);
-  ASSERT_EQ(7, list.GetStart());
+  ASSERT_EQ(7, list.PopStart());
 }
 
 TEST(ArrList, can_put_in_start)

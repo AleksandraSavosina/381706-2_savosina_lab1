@@ -208,6 +208,6 @@ void TArrList<T>::Print()
 	for (int i = 0; i < count; i++)
 	{
 		cout << mas[t] << " ";
-		t = nextIndex[t];
+		t = nextIndex[i];
 	}
 }

@@ -128,7 +128,7 @@ TEST(ArrList, throws_when_incurrent_index_when_put)
 
 TEST(ArrList, can_get_elem)
 {
-	TArrList <int> L(3);
+	TArrList <int> list(3);
 	list.PushEnd(1);
 	list.PushEnd(2);
 	list.PushEnd(3);

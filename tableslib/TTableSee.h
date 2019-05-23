@@ -66,7 +66,7 @@ public:
     else
     {
       char pmt = node[count - 1].GetKey();
-      string phelp(&ptm);
+      string phelp(ptm);
       tmp = phelp;
       node[count].SetKey(tmp);
     }

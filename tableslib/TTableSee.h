@@ -31,7 +31,7 @@ public:
   {
     size = h.size;
     count = h.count;
-    node = new TElem[size];
+    node = new TElem<T>[size];
 
     for (int i = 0; i < size; i++){
       node[i] = h.node[i];
@@ -142,7 +142,7 @@ public:
   int& operator [](string _key)
   {
     TElem<T>& res = Search(_key);	 // êëàä¸ì çíà÷åíèå , res - ññûëêà
-    if (res == stand){    // òî íà ñàìîì äåëå íå íàøëè
+    if (res == qemp){    // òî íà ñàìîì äåëå íå íàøëè
       TElem<T> n;
       n.key = _key;
       n.data = 0;

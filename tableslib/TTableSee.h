@@ -45,16 +45,16 @@ public:
     delete[] node;
   }
 
-  void Add(const TElem<T> & h)
+  bool Add(const TElem<T> & h)
   {
     if (size == count) 
       Expansion(count * 2);
     node[count] = h;
     count++;
-    //return true;
+    return true;
   }
 
-  void Add(T& _data)
+  bool Add(T& _data)
   {
     if (size == count)
       Expansion(count * 2);
@@ -66,12 +66,13 @@ public:
     else
     {
       char pmt = node[count - 1].GetKey();
-      string pmt(&letter);
-      tmp = pmt;
+      string phelp(&letter);
+      tmp = phelp;
       node[count].SetKey(tmp);
     }
 
     count++;
+    return true;
   }
 
   int GetCount() const

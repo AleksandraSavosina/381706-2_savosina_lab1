@@ -2,6 +2,8 @@
 #include <gtest.h>
 #include <string>
 
+using namespace std;
+
 TEST(TTable, can_create_table_with_size)
 {
   ASSERT_NO_THROW(TTable<int> table(17));

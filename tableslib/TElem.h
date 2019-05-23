@@ -12,7 +12,7 @@ protected:
   T data;
 
 public:
-  TElem() { data = NULL; }
+  TElem() { data = 0; }
 
   /*TElem(string _key = " ", T _data = 0)
   {

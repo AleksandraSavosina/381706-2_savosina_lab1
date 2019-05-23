@@ -10,17 +10,17 @@ protected:
   int count;
   int size;
   int m;
-  int Hash(String& key);
+  int Hash(string& key);
 public:
   THashTable(const int _size = 1);
   THashTable(const THashTable<T>& h);
   ~THashTable();
 
   int GetCount() const;
-  void Add(String& key, const T& data);
+  void Add(string& key, const T& data);
   void Add(TElem<T>& elem);
-  bool Del(String& key);
-  T& Search(String& key);
+  bool Del(string& key);
+  T& Search(string& key);
 
   friend std::ostream& operator<<(const std::ostream& out, const THashTable<T>& table)
   {
@@ -44,7 +44,7 @@ THashTable<T>::THashTable(const int _size)
   m = 2;
   if (size == 1){
     m = 1;
-    break;
+    //break;
   }
   else {
     while (size % m == 0){
@@ -56,6 +56,7 @@ THashTable<T>::THashTable(const int _size)
       m++;
     }
   }
+  
   node = new TElem<T>[size];
   for (int i = 0; i < size; i++)
     node[i] = qemp;
@@ -85,7 +86,7 @@ int THashTable<T>::GetCount() const
 }
 
 template <class T>
-void THashTable<T>::Add(String& key, const T& data)
+void THashTable<T>::Add(string& key, const T& data)
 {
   if (count == size)
     throw ("error: no place to add");
@@ -114,7 +115,7 @@ void THashTable<T>::Add(TElem<T>& elem)
 }
 
 template <class T>
-bool THashTable<T>::Del(String& key)
+bool THashTable<T>::Del(string& key)
 {
   int i = Hash(key);
   while (node[i].GetKey() != key)
@@ -128,7 +129,7 @@ bool THashTable<T>::Del(String& key)
 }
 
 template <class T>
-T& THashTable<T>::Search(String& key)
+T& THashTable<T>::Search(string& key)
 {
   int i = Hash(key);
   while (node[i].GetKey() != key)
@@ -141,10 +142,10 @@ T& THashTable<T>::Search(String& key)
 }
 
 template <class T>
-int THashTable<T>::Hash(String& key)
+int THashTable<T>::Hash(string& _key)
 {
   unsigned int hash = 0;
   for (int i = 0; i < key.GetCount(); i++)
-    hash = (hash >> 1) + key[i];
+    hash = (hash >> 1) + _key[i];
   return hash;
 }

@@ -14,11 +14,11 @@ protected:
 public:
   TElem() { data = NULL; }
 
-  TElem(string _key = " ", T _data = 0)
+  /*TElem(string _key = " ", T _data = 0)
   {
     key = _key;
     data = _data;
-  }
+  }*/
 
   ~TElem() {}
 
@@ -55,8 +55,8 @@ public:
 
   friend ostream& operator << (ostream& out, TElem& h)
   {
-    out << h.key << "/t";
-    out << h.data << endl;
+    out << "key: " << h.key << " . ";
+    out << "data: " << h.data << endl;
     return out;
   }
 };

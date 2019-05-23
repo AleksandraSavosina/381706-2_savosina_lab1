@@ -74,7 +74,6 @@ public:
     count++;
   }
 
-  template <class T>
   int GetCount() const
   {
     return count;
@@ -142,8 +141,8 @@ public:
 
   int& operator [](string _key)
   {
-    TElem<T>& res = Search(_key);	 // кладём значение , res - ссылка
-    if (res == stand){    // то на самом деле не нашли
+    TElem<T>& res = Search(_key);	 // ГЄГ«Г Г¤ВёГ¬ Г§Г­Г Г·ГҐГ­ГЁГҐ , res - Г±Г±Г»Г«ГЄГ 
+    if (res == stand){    // ГІГ® Г­Г  Г±Г Г¬Г®Г¬ Г¤ГҐГ«ГҐ Г­ГҐ Г­Г ГёГ«ГЁ
       TElem<T> n;
       n.key = _key;
       n.data = 0;

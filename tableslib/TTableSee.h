@@ -54,7 +54,7 @@ public:
     return true;
   }
 
-  bool Add(T& _data)
+/*  bool Add(T& _data)
   {
     if (size == count)
       Expansion(count * 2);
@@ -81,7 +81,7 @@ public:
     count++;
     return true;
   }
-
+*/
   int GetCount() const
   {
     return count;

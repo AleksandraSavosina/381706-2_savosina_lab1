@@ -62,13 +62,13 @@ public:
 };
 
 //--------------------------------------------------------------------
-template <class T>
-class TTreeElem
-{
-protected:
-  TElem *left, *right, *parent;
-public:
-  TTreeElem() {}
-  ~TTreeElem() {}
+//template <class T>
+//class TTreeElem
+//{
+//protected:
+//  TElem<T> *left, *right, *parent;
+//public:
+//  TTreeElem() {}
+//  ~TTreeElem() {}
 
-};
+//};

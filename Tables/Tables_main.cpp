@@ -3,9 +3,9 @@
 #include  <iostream>
 #include "TElem.h"
 #include "TTableSee.h"
-#include "TTableSort.h"
-#include "TTableHash.h"
-#include "TTableTree.h"
+//#include "TTableSort.h"
+//#include "TTableHash.h"
+//#include "TTableTree.h"
 
 #define TSEE
 //#define TSORT

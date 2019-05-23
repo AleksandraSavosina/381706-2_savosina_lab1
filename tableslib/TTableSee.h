@@ -66,7 +66,14 @@ public:
     else
     {
       char pmt = node[count - 1].GetKey();
-      string phelp(ptm);
+      string phelp;
+      
+      int con = strlen(pmt);
+      char* str = new char[con + 1];
+        for (int i = 0; i < con; i++)
+          str[i] = pmt[i];
+	    str[con] = '\0';
+      
       tmp = phelp;
       node[count].SetKey(tmp);
     }

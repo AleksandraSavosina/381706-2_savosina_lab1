@@ -63,9 +63,9 @@ TEST(TTable, can_add_element_check_bool)
 {
   TTable<int> table(7);
   string key("key");
-  TElem<int> elem(key, 17);
+  TElem<int> elem(key, 1);
   table.Add(elem);
-  EXPECT_EQ(table[key], 17);
+  EXPECT_EQ(table[key], 1);
 }
 
 TEST(TTable, can_search_element)
@@ -84,30 +84,6 @@ TEST(TTable, can_search_element)
   table.Add(elem3);
   table.Add(elem4);
   ASSERT_NO_THROW(table.Search(key3));
-}
-
-TEST(TTable, can_search_element)
-{
-  TTable<int> table(3);
-  string key1("key1");
-  string key2("key2");
-  string key3("key3");
-  string key4("key4");
-  TElem<int> elem1(key1, 17);
-  TElem<int> elem2(key2, 7);
-  TElem<int> elem3(key3, 1);
-  TElem<int> elem4(key4, 3);
-  table.Add(elem1);
-  table.Add(elem2);
-  table.Add(elem3);
-  ASSERT_NO_THROW(table.Search(key4));
-}
-
-TEST(TTable, can_add_int_element)
-{
-  TTable<int> table(5);
-  int n = 17;
-  ASSERT_NO_THROW(table.Add(n));
 }
 
 TEST(TTable, can_delete_element)

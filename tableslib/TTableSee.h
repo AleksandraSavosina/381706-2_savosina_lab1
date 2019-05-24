@@ -61,7 +61,7 @@ TTable<T>::TTable(TTable<T> & h)
 {
   size = h.size;
   count = h.count;
-  node = new TElem[size];
+  node = new TElem<T>[size];
 
   for (int i = 0; i < size; i++) {
     node[i] = h.node[i];

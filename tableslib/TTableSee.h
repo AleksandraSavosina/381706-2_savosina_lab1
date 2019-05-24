@@ -86,7 +86,7 @@ bool TTable<T>::Add(const TElem<T> & h)
   return true;
 }
 
-template <class T>
+/*template <class T>
 bool TTable<T>::Add(T& _data)
 {
   if (size == count)
@@ -114,7 +114,7 @@ bool TTable<T>::Add(T& _data)
   count++;
   return true;
 }
-
+*/
 template <class T>
 void TTable<T>::Expansion(int newSize)	// increase table size
 {

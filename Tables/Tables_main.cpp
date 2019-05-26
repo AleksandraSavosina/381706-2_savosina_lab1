@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void main()
+int main()
 {
   int count;
   cout << "Write count of elements in table: ";
@@ -37,4 +37,6 @@ void main()
     table.Delete(curr_key);
   }
   cout << "Your HashTable after delete: " << endl << table;
+  
+  return 0;
 }

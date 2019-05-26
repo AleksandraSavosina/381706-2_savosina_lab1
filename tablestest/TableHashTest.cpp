@@ -4,127 +4,177 @@
 
 using namespace std;
 
-TEST(TTable, can_create_table_with_size)
+
+TEST(THashTable, can_create_hashtable)
 {
-  ASSERT_NO_THROW(TTable<int> table(17));
+  ASSERT_NO_THROW(THashTable<int> table(17));
 }
 
-TEST(TTable, can_add_element_in_table)
+TEST(THashTable, can_add_element_to_hashtable)
 {
-  TTable<int> table(7);
-  string key("key");
+  THashTable<int> table(100);
+  string key("testkey");
   TElem<int> elem(key, 17);
   ASSERT_NO_THROW(table.Add(elem));
 }
 
-TEST(TTable, can_add_element_in_table__check_with_bool)
+TEST(THashTable, can_add_element_to_full_hashtable)
 {
-  TTable<int> table(7);
-  string key("key");
+  THashTable<int> table(3);
+  string key("testkey");
   TElem<int> elem(key, 17);
-  EXPECT_EQ(table.Add(elem), 1);
+  ASSERT_NO_THROW(table.Add(elem));
 }
 
-TEST(TTable, can_add_element_in_full_table)
+TEST(THashTable, can_add_element_to_hashtable_2)
 {
-  TTable<int> table(3);
-  string key1("key1");
-  string key2("key2");
-  string key3("key3");
-  string key4("key4");
-  TElem<int> elem1(key1, 17);
-  TElem<int> elem2(key2, 7);
-  TElem<int> elem3(key3, 1);
-  TElem<int> elem4(key4, 3);
-  table.Add(elem1);
-  table.Add(elem2);
-  table.Add(elem3);
-  ASSERT_NO_THROW(table.Add(elem4));
-}
-
-TEST(TTable, can_add_element_in_full_table_check_bool)
-{
-  TTable<int> table(3);
-  string key1("key1");
-  string key2("key2");
-  string key3("key3");
-  string key4("key4");
-  TElem<int> elem1(key1, 17);
-  TElem<int> elem2(key2, 7);
-  TElem<int> elem3(key3, 1);
-  TElem<int> elem4(key4, 3);
-  table.Add(elem1);
-  table.Add(elem2);
-  table.Add(elem3);
-  EXPECT_EQ(table.Add(elem4), 1);
-}
-
-TEST(TTable, can_add_element_check_bool)
-{
-  TTable<int> table(7);
-  string key("key");
-  TElem<int> elem(key, 1);
+  THashTable<int> table(5);
+  string key("testkey");
+  TElem<int> elem(key, 7);
   table.Add(elem);
-  EXPECT_EQ(table[key], 1);
+  EXPECT_EQ(table.Search(key), 7);
 }
 
-TEST(TTable, can_search_element)
+TEST(THashTable, can_add_element_to_hashtable_1)
 {
-  TTable<int> table(3);
-  string key1("key1");
-  string key2("key2");
-  string key3("key3");
-  string key4("key4");
-  TElem<int> elem1(key1, 17);
-  TElem<int> elem2(key2, 7);
-  TElem<int> elem3(key3, 1);
-  TElem<int> elem4(key4, 3);
-  table.Add(elem1);
-  table.Add(elem2);
-  table.Add(elem3);
-  table.Add(elem4);
-  ASSERT_NO_THROW(table.Search(key3));
+  THashTable<int> table(100);
+  string key("testkey");
+  ASSERT_NO_THROW(table.Add(key, 17));
 }
 
-TEST(TTable, can_delete_element)
+TEST(THashTable, can_add_element_to_full_hashtable_1)
 {
-  TTable<int> table(3);
-  string key1("key1");
-  string key2("key2");
-  string key3("key3");
-  string key4("key4");
-  TElem<int> elem1(key1, 17);
-  TElem<int> elem2(key2, 7);
-  TElem<int> elem3(key3, 1);
-  TElem<int> elem4(key4, 3);
-  table.Add(elem1);
-  table.Add(elem2);
-  table.Add(elem3);
-  table.Add(elem4);
-  ASSERT_NO_THROW(table.Delete(elem3));
+  THashTable<int> table(3);
+  string key("testkey");
+  ASSERT_NO_THROW(table.Add(key, 17));
 }
 
-TEST(TTable, cad_throw_in_case_of_null_size)
+TEST(THashTable, can_add_element_to_hashtable_4)
 {
-  TTable<int> table(3);
-  string key3("key3");
-  EXPECT_EQ(table.Delete(key3), 0);
+  THashTable<int> table(5);
+  string key("testkey");
+  table.Add(key, 10);
+  EXPECT_EQ(table.Search(key), 10);
 }
 
-TEST(TTable, cad_delete_elemen_with_key)
+TEST(THashTable, can_return_count)
 {
-  TTable<int> table(3);
-  string key1("key1");
-  string key2("key2");
-  string key3("key3");
-  string key4("key4");
-  TElem<int> elem1(key1, 17);
-  TElem<int> elem2(key2, 7);
-  TElem<int> elem3(key3, 1);
-  TElem<int> elem4(key4, 3);
-  table.Add(elem1);
-  table.Add(elem2);
-  table.Add(elem3);
-  table.Add(elem4);
-  EXPECT_EQ(table.Delete(key3), 1);
+  THashTable<int> table(5);
+  ASSERT_NO_THROW(table.GetCount());
+}
+
+TEST(THashTable, can_return_count_1)
+{
+  THashTable<int> table(5);
+  EXPECT_EQ(0, table.GetCount());
+}
+
+TEST(THashTable, can_return_count_2)
+{
+  THashTable<int> table(5);
+  string key("testkey");
+  table.Add(key, 17);
+  ASSERT_NO_THROW(table.GetCount());
+}
+
+TEST(THashTable, can_return_count_4)
+{
+  THashTable<int> table(5);
+  string key("testkey");
+  table.Add(key, 17);
+  EXPECT_EQ(1, table.GetCount());
+}
+
+TEST(THashTable, can_delete_element_from_hashtable)
+{
+  THashTable<int> table(100);
+  string key("testkey");
+  TElem<int> elem(key, 17);
+  table.Add(elem);
+  EXPECT_EQ(table.Delete(key), 1);
+}
+
+TEST(THashTable, can_delete_element_from_hashtable_1)
+{
+  THashTable<int> table(5);
+  string key("testkey");
+  TElem<int> elem(key, 17);
+  table.Add(elem);
+  EXPECT_EQ(table.Delete(key), 1);
+}
+
+TEST(THashTable, can_add_element_to_hashtable_5)
+{
+  THashTable<int> table(5);
+  string key("testkey1");
+  string key1("testkey2");
+  string key2("testkey3");
+  string key3("testkey4");
+  string key4("testkey5");
+  table.Add(key, 10);
+  table.Add(key1, 15);
+  table.Add(key2, 20);
+  table.Add(key3, 25);
+  table.Add(key4, 30);
+  EXPECT_EQ(table.Search(key2), 20);
+}
+
+TEST(THashTable, can_overcome_the_conflict_0)
+{
+  THashTable<int> table(5);
+  string key1("testkey1");
+  string key2("testkey2");
+  table.Add(key1, 15);
+  table.Add(key2, 20);
+  ASSERT_NO_THROW(table.Search(key2));
+}
+
+TEST(THashTable, can_overcome_the_conflict_1)
+{
+  THashTable<int> table(5);
+  string key1("testkey1");
+  string key2("testkey2");
+  string key3("testkey3");
+  string key4("testkey4");
+  table.Add(key1, 15);
+  table.Add(key2, 20);
+  table.Add(key3, 25);
+  table.Add(key4, 30);
+  ASSERT_NO_THROW(table.Search(key2));
+}
+
+TEST(THashTable, can_overcome_the_conflict_3)
+{
+  THashTable<int> table(5);
+  string key1("testkey1");
+  string key2("testkey2");
+  table.Add(key1, 15);
+  table.Add(key2, 20);
+  EXPECT_EQ(table.Search(key2), 20);
+}
+
+TEST(THashTable, can_overcome_the_conflict_4)
+{
+  THashTable<int> table(5);
+  string key1("testkey1");
+  string key2("testkey2");
+  string key3("testkey3");
+  string key4("testkey4");
+  table.Add(key1, 15);
+  table.Add(key2, 20);
+  table.Add(key3, 25);
+  table.Add(key4, 30);
+  EXPECT_EQ(table.Search(key3), 25);
+}
+
+TEST(THashTable, can_return_false_if_number_is_simple)
+{
+  THashTable<int> table(5);
+  EXPECT_EQ(table.IsSimple(156), false);
+}
+
+TEST(THashTable, can_return_true_if_number_is_simple)
+{
+  THashTable<int> table(5);
+  EXPECT_EQ(table.IsSimple(157), true);
 }

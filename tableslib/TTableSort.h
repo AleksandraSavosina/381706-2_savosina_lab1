@@ -240,6 +240,7 @@ TSortTable<T>::TSortTable(const int _size)
     node[i] = qempt;
 }
 
+/*
 template <class T>
 TSortTable<T>::TSortTable(const TSortTable<T>& table)
 {
@@ -249,7 +250,7 @@ TSortTable<T>::TSortTable(const TSortTable<T>& table)
   for (int i = 0; i < size; i++)
     node[i] = table.node[i];
 }
-
+*/
 template <class T>
 TSortTable<T>::TSortTable(const TTable<T>& table)
 {

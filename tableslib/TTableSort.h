@@ -91,12 +91,12 @@ bool TTable<T>::Add(T& _data)
   if (size == count)
     Expansion(count * 2);
   string tmp("NewKey");
-  node[count].SetData(_data);
+  nod[count].SetData(_data);
   if (count == 0)
     nod[count].SetData(_data);
   else
   {
-    char pmt = node[count - 1].GetKey();
+    char pmt = nod[count - 1].GetKey();
     string phelp;
     int con = strlen(pmt);
     char* str = new char[con + 1];
@@ -104,7 +104,7 @@ bool TTable<T>::Add(T& _data)
       str[i] = pmt[i];
     str[con] = '\0';
     tmp = phelp;
-    node[count].SetKey(tmp);
+    nod[count].SetKey(tmp);
   }
   count++;
   return true;

@@ -197,7 +197,7 @@ protected:
   int size;
 public:
   TSortTable(const int _size = 1);
-  TSortTable(const TSortTable<T>& table);
+  TSortTable(const TTable<T>& table);
   //TSortTable(const TTable<T>& table, const int num);
   ~TSortTable();
 

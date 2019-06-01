@@ -1,5 +1,5 @@
 ﻿file(GLOB hdrs "*.h*") #Äîáàâëÿåì â ïåğåìåííóş hdrs âñå ôàéëû ñ ğàñøèğåíèåì .h
 file(GLOB srcs "*.cpp")#Äîáàâëÿåì â ïåğåìåííóş srcs âñå ôàéëû ñ ğàñøèğåíèåì .h
 
-add_executable(${Tables} ${srcs} ${hdrs})
-target_link_libraries(${Tables})
+add_executable(${Plex} ${srcs} ${hdrs})
+target_link_libraries(${Plex})

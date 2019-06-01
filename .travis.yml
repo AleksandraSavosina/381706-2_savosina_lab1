@@ -8,6 +8,6 @@ before_script:
 script:
   - cmake ../381706-2_savosina_labs
   - make -j
-  - ./tablestest/tablestest
+  - ./plextest/plextest
 notifications:
   email: false

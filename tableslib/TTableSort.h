@@ -6,6 +6,38 @@
 
 using namespace std;
 
+template <class T>
+class TTable
+{
+protected:
+  static TElem<T> qemp;
+  
+  int size;
+  int count;
+public:
+  TElem<T>* nod;
+  TTable(const int _size);
+  TTable(TTable<T> & h);
+  ~TTable();
+
+  bool Add(const TElem<T> & h);
+  bool Add(T& _data);
+  int GetCount() const { return count; }
+
+  void Expansion(int newSize);	// increase table size
+
+  void Delete(TElem<T> & h);
+  bool Delete(const string& _key);
+  TElem<T>& Search(string _k);
+  int& operator [](string _key);
+
+  friend ostream& operator << (ostream& out, TTable<T>& A)
+  {
+    for (int i = 0; i < A.count; i++)
+      out << A.nod[i] << endl;
+    return out;
+  }
+};
 
 template <class T>
 TElem<T> TTable<T>::qemp;

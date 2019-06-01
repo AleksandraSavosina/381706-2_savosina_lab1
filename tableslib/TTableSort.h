@@ -93,7 +93,7 @@ bool TTable<T>::Add(T& _data)
   string tmp("NewKey");
   node[count].SetData(_data);
   if (count == 0)
-    node[count].SetData(_data);
+    nod[count].SetData(_data);
   else
   {
     char pmt = node[count - 1].GetKey();
@@ -267,7 +267,8 @@ TSortTable<T>::TSortTable(const TTable<T>& table)
 template <class T>
 TSortTable<T>::~TSortTable()
 {
-  count = size = 0;
+  count = 0;
+  size = 0;
   delete[] node;
 }
 

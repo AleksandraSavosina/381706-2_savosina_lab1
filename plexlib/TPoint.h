@@ -22,7 +22,7 @@ public:
     x = _x;
     y = _y;
   }
-  TPoint(const TPoint& point);
+  TPoint(const TPoint& point)
   {
     x = point.x;
     y = point.y;

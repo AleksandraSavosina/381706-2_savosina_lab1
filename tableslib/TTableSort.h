@@ -198,7 +198,7 @@ protected:
 public:
   TSortTable(const int _size = 1);
   TSortTable(const TSortTable<T>& table);
-  TSortTable(const TTable<T>& table, const int num_sort);
+  //TSortTable(const TTable<T>& table, const int num);
   ~TSortTable();
 
   int GetCount() const;

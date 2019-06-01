@@ -2,87 +2,42 @@
 #include  <string>
 #include  <iostream>
 #include "TElem.h"
-#include "TTableSee.h"
-//#include "TTableSort.h"
-//#include "TTableHash.h"
-//#include "TTableTree.h"
-
-#define TSEE
-//#define TSORT
-//#define THASH
-//#define TTREE
+#include "TTableSort.h"
 
 using namespace std;
 
-#ifdef TSEE
-
 int main()
 {
-  //TElem<int> el();
-  //THashTable<int> TabH(5);
-  
-  //TTable<int> table;
   int count;
-  cout << "Enter count of elements in SeeTable: ";
+  cout << "Write count of elements in table: ";
   cin >> count;
-  TTable<int> table(count);////
+  TSortTable<int> table(count);
   TElem<int> elem;
-  char str[30];
-
-  for (int i = 1; i <= count; i++)
+  char str[100];
+  /*for (int i = 0; i < count; i++)
   {
     int data;
-    cout << "Enter key " << i << ": ";
+    cout << "Write key " << i + 1 << ": ";
     cin >> str;
-    string key(str);
-    cout << "Enter data " << i << ": ";
+    cout << "Write data " << i + 1 << ": ";
     cin >> data;
+    string curr_key(str);
     elem.SetData(data);
-    elem.SetKey(key);
-    table.Add(elem);
+    elem.SetKey(curr_key);
+    table.Add(curr_key, data);
   }
-  cout << "Your SeeTable: " << endl << table << endl;
-  
-  cout << "Enter count of elements in table to delete: ";
+  cout << "Your HashTable: " << endl << table;
+  cout << "Write count of elements in table that you want to delete: ";
   cin >> count;
   for (int i = 0; i < count; i++)
   {
     cout << "Write key: ";
     cin >> str;
-    string key(str);
-    table.Delete(key);
+    string curr_key(str);
+    table.Delete(curr_key);
   }
-
-  cout << "Your SeeTable after delete: " << endl << table;
+  cout << "Your HashTable after delete: " << endl << table;*/
   
   return 0;
 }
 
-#endif
-
-#ifdef TSORT
-
-int main()
-{
-  return 0;
-}
-
-#endif
-
-#ifdef THASH
-
-int main()
-{
-  return 0;
-}
-
-#endif
-
-#ifdef TTREE
-
-int main()
-{
-  return 0;
-}
-
-#endif

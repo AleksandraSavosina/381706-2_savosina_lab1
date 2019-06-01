@@ -8,12 +8,14 @@ using namespace std;
 
 int main()
 {
+  /*
   int count;
   cout << "Write count of elements in table: ";
   cin >> count;
   TSortTable<int> table(count);
   TElem<int> elem;
   char str[100];
+  */
   /*for (int i = 0; i < count; i++)
   {
     int data;

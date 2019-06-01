@@ -5,75 +5,49 @@
 using namespace std;
 
 template <class T>
-class TElem
+class TPoint
 {
 protected:
-  string key;
-  T data;
-
+  double x;
+  double y;
 public:
-  TElem() 
-  {  }
-
-  TElem(string _key, T _data)
+  TPoint()
   {
-    key = _key;
-    data = _data;
+    x = 0;
+    y = 0;
   }
 
-  ~TElem() {}
-
-  TElem& operator = (const TElem<T>& h)
+  TPoint(const double _x, const double _y)
   {
-    if (this != &h) {
-      data = h.data;
-      key = h.key;
-    }
-
-    return *this;
+    x = _x;
+    y = _y;
   }
-
-  bool operator==(TElem& h)
+  TPoint(const TPoint& point);
   {
-    return (data == h.data && key == h.key);
+    x = point.x;
+    y = point.y;
   }
-
-  bool operator!=(TElem& h)
+  ~TPoint() { x = 0;  y = 0; }
+  bool operator==(const TPoint& point)
   {
-    return !(data == h.data && key == h.key);
+    if (x == point.x && y == point.y)
+      return true;
+    else
+      return false;
   }
-
-  bool operator < (TElem& h)
+  bool operator!=(const TPoint& point)
   {
-    return (key < h.key);
+    if (x == point.x && y == point.y)
+      return false;
+    else
+      return true;
   }
-
-  bool operator > (TElem& h)
+  void SetX(const double _x) { x = _x; }
+  void SetY(const double _y) { y = _y; }
+  double GetX() { return x; }
+  double GetY() { return y; }
+  virtual void Show()
   {
-    return (key > h.key);
-  }
-
-  T& GetData()
-  {
-    return data;
-  }
-  void SetData(const T& _data)
-  {
-    data = _data;
-  }
-  string& GetKey()
-  {
-    return key;
-  }
-  void SetKey(const string& _key)
-  {
-    key = _key;
-  }
-
-  friend ostream& operator << (ostream& out, TElem& h)
-  {
-    out << "key: " << h.key << " . ";
-    out << "data: " << h.data << endl;
-    return out;
+    cout << "x = " << x << " y = " << y << endl;
   }
 };

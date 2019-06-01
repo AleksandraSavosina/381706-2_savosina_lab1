@@ -251,17 +251,14 @@ TSortTable<T>::TSortTable(const TSortTable<T>& table)
 }
 
 template <class T>
-TSortTable<T>::TSortTable(const TTable<T>& table, const int nomber_sort)
+TSortTable<T>::TSortTable(const TTable<T>& table)
 {
   size = table.size;
   count = table.count;
   TTable<T> copy_t(table);
-  if (nomber_sort == INSERT_SORT)
-    TSortTable<T>::InsertSort(copy_t);
-  else if (nomber_sort == MERGE_SORT)
-    TSortTable<T>::MergeSort(copy_t, copy_t.count, 0);
-  else if (nomber_sort == QUICK_SORT)
-    TSortTable<T>::QuickSort(copy_t, 0, copy_t.count - 1);
+  
+  TSortTable<T>::InsertSort(copy_t);
+ 
   node = new TElem<T>[size];
   for (int i = 0; i < count; i++)
     node[i] = copy_t.node[i];

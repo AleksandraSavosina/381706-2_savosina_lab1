@@ -85,30 +85,30 @@ bool TTable<T>::Add(const TElem<T> & h)
   return true;
 }
 
-template <class T>
-bool TTable<T>::Add(T& _data)
-{
-  if (size == count)
-    Expansion(count * 2);
-  string tmp("NewKey");
-  nod[count].SetData(_data);
-  if (count == 0)
-    nod[count].SetData(_data);
-  else
-  {
-    char pmt = nod[count - 1].GetKey();
-    string phelp;
-    int con = strlen(pmt);
-    char* str = new char[con + 1];
-    for (int i = 0; i < con; i++)
-      str[i] = pmt[i];
-    str[con] = '\0';
-    tmp = phelp;
-    nod[count].SetKey(tmp);
-  }
-  count++;
-  return true;
-}
+//template <class T>
+//bool TTable<T>::Add(T& _data)
+//{
+//  if (size == count)
+//    Expansion(count * 2);
+//  string tmp("NewKey");
+//  nod[count].SetData(_data);
+//  if (count == 0)
+//    nod[count].SetData(_data);
+//  else
+//  {
+//    char pmt = nod[count - 1].GetKey();
+//    string phelp;
+//    int con = strlen(pmt);
+//    char* str = new char[con + 1];
+//    for (int i = 0; i < con; i++)
+//      str[i] = pmt[i];
+//    str[con] = '\0';
+//    tmp = phelp;
+//    nod[count].SetKey(tmp);
+//  }
+//  count++;
+//  return true;
+//}
 
 template <class T>
 void TTable<T>::Expansion(int newSize)	// increase table size

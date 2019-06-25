@@ -1,13 +1,19 @@
+#ifndef __QUEUE_H__
+#define __QUEUE_H__
+#include <iostream>
+
+using namespace std; 
+
 template <class T>
 
 class TQueue
 {
 protected:
   int size; // размер стека
-  T* mas; // элементы стека
-  int top; // верх
+  T* mas;   // элементы стека
+  int top;  // верх
   int start; // начало очереди
-  int end; // конец очереди
+  int count;  // кол-во эл-тов
 public:
   TQueue() // конструктор по умолчанию
   {
@@ -15,7 +21,7 @@ public:
     mas = 0;
     top = 0;
     start = 0;
-    end = 0;
+    count = 0;
   }
 
   TQueue(int _size) // конструктор с параметром
@@ -26,53 +32,61 @@ public:
     size = _size;
     top = 0;
     start = 0;
-    end = 0;
+    count = 0;
   }
 
-	// TQueue(TQueue &h) // конструктор копирования
-
-	// {
-
-	//size = h.size;
-
-	// start = h.start;
-
-	//end = h.end;
-
-	// }
+  TQueue(TQueue &h) // конструктор копирования
+  {
+    size = h.size;
+    start = h.start;
+    count = h.count;
+  }
 
   void Put(T h) // положить в конец очереди
   {
-    if (IsFulll())
+    if (IsFull())
       throw "error: queue is full";
-    else
-    {
+    else{
       mas[start] = h;
       start = (start + 1) % size;
-      end++;
+      count++;
     }
   }
 
   T Get() // взять первый элемент
   {
-    if (IsEmptyy())
+    if (IsEmpty())
       throw "error: queue is empty";
-    else
-    {
+    else{
       T tmp = mas[top];
       top = (top + 1) % size;
-      end--;
+      count--;
       return tmp;
     }
   }
 
-  bool IsFulll() // проверка на полноту
+  bool IsFull() // полнота
   {
-    return (end == size);
+    return (count == size);
   }
 
-  bool IsEmptyy() // проверка на пустоту
+  bool IsEmpty() // пустота
   {
-    return (end == 0);
+    return (count == 0);
+  }
+
+  void Print() // печать
+  {
+    int hop = 0;
+    cout << "Queue: " << endl;
+    for (int i = start; i < size; i++) {
+      cout << mas[i] << " / ";
+      hop++;
+    }
+    for (int i = 0; i < count - hop; i++){
+      cout << mas[i] << " / ";
+    }
   }
 };
+
+#endif

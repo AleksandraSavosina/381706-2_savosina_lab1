@@ -81,7 +81,7 @@ public:
     if (IsEmpty())
       throw "stack is empty";
     else{
-      return mas[top];
+      return mas[top - 1];
     }
   }
 

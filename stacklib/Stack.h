@@ -98,8 +98,7 @@ public:
   void Print() // печать
   {
     cout << "Stack: " << endl;
-    for (int i = 0; i < top; i++)
-    {
+    for (int i = 0; i < top; i++){
       cout << mas[i] << " / ";
     }
   }

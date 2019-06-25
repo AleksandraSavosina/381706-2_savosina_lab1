@@ -18,7 +18,7 @@ int main()
     switch (j)
     {
       case 1:
-        if (help.IsFulll() == true)
+        if (help.IsFull() == true)
         {
 	  cout << "Sorry. Queue is full" << endl;
 	  break;
@@ -31,7 +31,7 @@ int main()
         }
       break;
     case 2:
-      if (help.IsEmptyy() == true)
+      if (help.IsEmpty() == true)
       {
         cout << "Sorry. Queue is empty" << endl;
         break;
@@ -54,7 +54,7 @@ int main()
    }
  }
 
-  if (help.IsEmptyy())
+  if (help.IsEmpty())
     cout << "Queue is empty" << endl;
   else
     cout << "Queue is full" << endl;
